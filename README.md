@@ -53,7 +53,8 @@ From the root of your workspace:
 
 ```bash
 cd ~/f1tenth_project_ws
-colcon build --symlink-install --packages-select f1tenth_control
+source /opt/ros/$ROS_DISTRO/setup.bash
+colcon build --symlink-install --packages-select f1tenth_control f1tenth_gym_ros
 source install/setup.bash
 ```
 
