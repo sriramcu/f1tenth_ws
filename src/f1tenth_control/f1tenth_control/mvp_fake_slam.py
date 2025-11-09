@@ -51,6 +51,7 @@ class FakeSLAM(Node):
         cos_y, sin_y = math.cos(yaw), math.sin(yaw)
         Xg = x + cos_y*xs - sin_y*ys
         Yg = y + sin_y*xs + cos_y*ys
+        # modify this part for real SLAM
         self.points.extend(zip(Xg.tolist(), Yg.tolist()))
 
     def check_done(self):
