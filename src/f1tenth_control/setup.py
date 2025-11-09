@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'pure_pursuit_control = f1tenth_control.pure_pursuit_control:main',
             'waypoint_recorder = f1tenth_control.waypoint_recorder:main',
+            'mvp_fake_slam = f1tenth_control.mvp_fake_slam:main',
         ],
     },
 )
