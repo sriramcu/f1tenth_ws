@@ -83,7 +83,7 @@ class FakeSLAM(Node):
         ax.set_title('Ground Truth (green) vs Accumulated LiDAR (red)')
         ax.grid(True, alpha=0.3)
         ax.legend(loc='best')
-        out = os.path.expanduser('~/mvp_fake_slam_overlay.png')
+        out = os.path.expanduser(f'~/mvp_fake_slam_overlay_{int(time.time())}.png')
         plt.savefig(out, dpi=150)
         print(f'Saved overlay to: {out}')
         plt.show()
