@@ -62,6 +62,8 @@ source install/setup.bash
 
 ##  5. Run the Simulation
 
+## 5.1 Simple Way:
+
 Open **three terminals** (all sourced with `source install/setup.bash`).
 
 ### Terminal A – Run Simulator
@@ -77,7 +79,7 @@ You’ll see `/ego_racecar/odom` and `/ego_racecar/scan` topics appear:
 ros2 topic list | grep ego_racecar
 ```
 
-###  Terminal B - Drive the Vehicle
+###  Terminal B - Drive the Vehicle in a Straight Line
 
 ```bash
 ros2 topic pub -r 10 /ego_racecar/drive ackermann_msgs/msg/AckermannDriveStamped \
@@ -97,6 +99,33 @@ ros2 run f1tenth_control mvp_fake_slam --ros-args \
   -p lap_seconds:=25.0
 ```
 
+## 5.2 Manual Way:
+
+Open **three terminals** (all sourced with `source install/setup.bash`).
+
+### Terminal A – Run Simulator
+
+```bash
+ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
+
+###  Terminal B - Drive the Vehicle Manually via keyboard inputs
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+
+### Terminal C – Run Fake SLAM
+
+```bash
+export MPLBACKEND=Agg
+ros2 run f1tenth_control mvp_fake_slam --ros-args \
+  -p gt_map_yaml:=$(ros2 pkg prefix f1tenth_gym_ros)/share/f1tenth_gym_ros/maps/levine.yaml \
+  -p odom_topic:=/ego_racecar/odom \
+  -p scan_topic:=/ego_racecar/scan \
+  -p lap_seconds:=100.0
+```
 ---
 
 ##  7. Output
