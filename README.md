@@ -117,12 +117,23 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 Controls:
 
-    i - Move forward
-    , - Move backward
-    j - Turn left
-    l - Turn right
-    k - Stop
-    q/z - Increase/decrease speeds
+i → forward (straight)
+
+, → backward (straight)
+
+j → rotate left in place (no forward speed)
+
+l → rotate right in place (no forward speed)
+
+u → forward + left
+
+o → forward + right
+
+m → backward + left
+
+. → backward + right
+
+k → stop
 
 
 
