@@ -15,8 +15,8 @@ def yaw_from_quat(x,y,z,w):
 class FakeSLAM(Node):
     def __init__(self):
         super().__init__('mvp_fake_slam')
-        self.declare_parameter('gt_map_yaml', '')     # e.g. <share_of_f1tenth_gym_ros>/maps/levine.yaml
-        self.declare_parameter('lap_seconds', 20.0)    # stop/plot after this many seconds
+        self.declare_parameter('gt_map_yaml', '')     
+        self.declare_parameter('lap_seconds', 20.0)    
         self.declare_parameter('odom_topic', 'ego_racecar/odom')
         self.declare_parameter('scan_topic', 'scan')
 
@@ -85,7 +85,7 @@ class FakeSLAM(Node):
         ax.legend(loc='best')
         out = os.path.expanduser('~/mvp_fake_slam_overlay.png')
         plt.savefig(out, dpi=150)
-        print(f'[MVP] Saved overlay to: {out}')
+        print(f'Saved overlay to: {out}')
         plt.show()
         rclpy.shutdown()
 
