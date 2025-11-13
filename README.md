@@ -113,7 +113,17 @@ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
-```
+```  
+
+Controls:
+
+    i - Move forward
+    , - Move backward
+    j - Turn left
+    l - Turn right
+    k - Stop
+    q/z - Increase/decrease speeds
+
 
 
 ### Terminal C – Run Fake SLAM
